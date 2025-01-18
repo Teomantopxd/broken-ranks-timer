@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monster Timer</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
+</head>
+<body>
+    <div class="container">
+        <div class="monsterArea" id="area0">
+            <img src="brokenRanks.png">
+            <span id="monster-name">Nazwa</span>
+            <span id="monster-localization">Lokalizacja</span>
+            <span id="monster-respawn">Respawn</span>
+            <span id="monster-dissapear">Znika po</span>
+            <button id="start-monster0" disabled="true">Start Timer</button>
+            <span id="timer-monster0">Pozostały czas (minimum)</span>
+            <span id="info-monster0">Timer skończył się o </span>
+            <button disabled="true">Clear Info</button>
+            <button id="reset-monster0" disabled="true">Reset Timer</button>
+        </div>
+        <br>
+        <!-- Jaskinia południowa -->
+        <div class="monster" id="monster4">
+            <img src="monsterImg/70px-Kosior.png" alt="Kosior">
+            <span id="monster-name">Kosior Lv.16</span>
+            <span id="monster-localization">Jaskinia Południowa</span>
+            <span class="timer-class" id="monster-respawn">25min - 30min</span>
+            <span id="monster-dissapear">8min</span>
+            <button id="start-monster4" onclick="startTimer('monster4', 1500)">Start Timer</button>
+            <span id="timer-monster4"></span>
+            <span id="info-monster4"></span>
+            <button onclick="clearInfo('monster4')">Clear Info</button>
+            <button id="reset-monster4" onclick="resetTimer('monster4', 1500)">Reset Timer</button>
+        </div>
+        <div class="monster" id="monster5">
+            <img src="monsterImg/70px-Kruczy.png" alt="Kruczy">
+            <span id="monster-name">Kruczy Lv.16</span>
+            <span id="monster-localization">Jaskinia Południowa</span>
+            <span class="timer-class" id="monster-respawn">25min - 30min</span>
+            <span id="monster-dissapear">8min</span>
+            <button id="start-monster5" onclick="startTimer('monster5', 5)">Start Timer</button>
+            <span id="timer-monster5"></span>
+            <span id="info-monster5"></span>
+            <button onclick="clearInfo('monster5')">Clear Info</button>
+            <button id="reset-monster5" onclick="resetTimer('monster5', 5)">Reset Timer</button>
+        </div>
+        <!-- Jaskinia południowa -->
+        <br>
+        <!-- Wymarła osada -->
+        <div class="monster" id="monster1">
+            <img src="monsterImg/70px-Treven.png" alt="Treven">
+            <span id="monster-name">Treven Lv.26</span>
+            <span id="monster-localization">Wymarła osada</span>
+            <span class="timer-class" id="monster-respawn">1h - 1h20min</span>
+            <span id="monster-dissapear">10-15min</span>
+            <button id="start-monster1" onclick="startTimer('monster1', 3600)">Start Timer</button>
+            <span id="timer-monster1"></span>
+            <span id="info-monster1"></span>
+            <button onclick="clearInfo('monster1')">Clear Info</button>
+            <button id="reset-monster1" onclick="resetTimer('monster1', 3600)">Reset Timer</button>
+        </div>
+        <div class="monster" id="monster2">
+            <img src="monsterImg/70px-Cybulski.png" alt="Cybulski">
+            <span id="monster-name">Cybulski Lv.28</span>
+            <span id="monster-localization">Wymarła osada</span>
+            <span class="timer-class" id="monster-respawn">35min - 50min</span>
+            <span id="monster-dissapear">8-10min</span>
+            <button id="start-monster2" onclick="startTimer('monster2', 2100)">Start Timer</button>
+            <span id="timer-monster2"></span>
+            <span id="info-monster2"></span>
+            <button onclick="clearInfo('monster2')">Clear Info</button>
+            <button id="reset-monster2" onclick="resetTimer('monster2', 2100)">Reset Timer</button>
+        </div>
+        <div class="monster" id="monster3">
+            <img src="monsterImg/70px-Nielichy.png" alt="Nielichy">
+            <span id="monster-name">Nielichy Lv.28</span>
+            <span id="monster-localization">Wymarła osada</span>
+            <span class="timer-class" id="monster-respawn">20min - 28min</span>
+            <span id="monster-dissapear">7-8min</span>
+            <button id="start-monster3" onclick="startTimer('monster3', 1200)">Start Timer</button>
+            <span id="timer-monster3"></span>
+            <span id="info-monster3"></span>
+            <button onclick="clearInfo('monster3')">Clear Info</button>
+            <button id="reset-monster3" onclick="resetTimer('monster3', 1200)">Reset Timer</button>
+        </div>
+        <!-- Wymarła osada -->
+        <br>
+        <!-- Podzamcze -->
+        <div class="monster" id="monster6">
+            <img src="monsterImg/70px-Ogruch.png" alt="Ogruch">
+            <span id="monster-name">Ogruch Lv.26</span>
+            <span id="monster-localization">Podzamcze</span>
+            <span class="timer-class" id="monster-respawn">20min - 30min</span>
+            <span id="monster-dissapear">6-7min</span>
+            <button id="start-monster6" onclick="startTimer('monster6', 1200)">Start Timer</button>
+            <span id="timer-monster6"></span>
+            <span id="info-monster6"></span>
+            <button onclick="clearInfo('monster6')">Clear Info</button>
+            <button id="reset-monster6" onclick="resetTimer('monster6', 1200)">Reset Timer</button>
+        </div>
+        <div class="monster" id="monster7">
+            <img src="monsterImg/70px-Popiel.png" alt="Popiel">
+            <span id="monster-name">Popiel Lv.28</span>
+            <span id="monster-localization">Podzamcze</span>
+            <span class="timer-class" id="monster-respawn">30min - 40min</span>
+            <span id="monster-dissapear">8-10min</span>
+            <button id="start-monster7" onclick="startTimer('monster7', 1800)">Start Timer</button>
+            <span id="timer-monster7"></span>
+            <span id="info-monster7"></span>
+            <button onclick="clearInfo('monster7')">Clear Info</button>
+            <button id="reset-monster7" onclick="resetTimer('monster7', 1800)">Reset Timer</button>
+        </div>
+        <div class="monster" id="monster8">
+            <img src="monsterImg/70px-Harlair.png" alt="Harlair">
+            <span id="monster-name">Harlair Lv.28</span>
+            <span id="monster-localization">Podzamcze</span>
+            <span class="timer-class" id="monster-respawn">1h - 1h15min</span>
+            <span id="monster-dissapear">12-15min</span>
+            <button id="start-monster8" onclick="startTimer('monster8', 3600)">Start Timer</button>
+            <span id="timer-monster8"></span>
+            <span id="info-monster8"></span>
+            <button onclick="clearInfo('monster8')">Clear Info</button>
+            <button id="reset-monster8" onclick="resetTimer('monster8', 3600)">Reset Timer</button>
+        </div>
+        <div class="monster" id="monster9">
+            <img src="monsterImg/70px-Orthal.png" alt="Orthal">
+            <span id="monster-name">Orthal Lv.28</span>
+            <span id="monster-localization">Podzamcze</span>
+            <span class="timer-class" id="monster-respawn">40min - 1h</span>
+            <span id="monster-dissapear">8-10min</span>
+            <button id="start-monster9" onclick="startTimer('monster9', 2400)">Start Timer</button>
+            <span id="timer-monster9"></span>
+            <span id="info-monster9"></span>
+            <button onclick="clearInfo('monster9')">Clear Info</button>
+            <button id="reset-monster9" onclick="resetTimer('monster9', 2400)">Reset Timer</button>
+        </div>
+        <div class="monster" id="monster10">
+            <img src="monsterImg/70px-Wilhelm_tell.png" alt="Wilhelm Tell">
+            <span id="monster-name">Wilhelm Tell Lv.32</span>
+            <span id="monster-localization">Podzamcze</span>
+            <span class="timer-class" id="monster-respawn">45min - 1h5min</span>
+            <span id="monster-dissapear">8-10min</span>
+            <button id="start-monster10" onclick="startTimer('monster10', 2700)">Start Timer</button>
+            <span id="timer-monster10"></span>
+            <span id="info-monster10"></span>
+            <button onclick="clearInfo('monster10')">Clear Info</button>
+            <button id="reset-monster10" onclick="resetTimer('monster10', 2700)">Reset Timer</button>
+        </div>
+        <!-- Podzamcze -->
+    </div>
+</body>
+<script>
+    const socket = new WebSocket('ws://localhost:3000'); // Zmień na URL serwera Render.com
+
+    let intervals = {};
+
+    // Odbieranie wiadomości z serwera
+    socket.onmessage = (event) => {
+        try {
+            const data = JSON.parse(event.data); // Parsowanie wiadomości JSON
+
+            switch (data.type) {
+                case 'start':
+                    syncStartTimer(data.monsterId, data.duration);
+                    break;
+                case 'reset':
+                    syncResetTimer(data.monsterId);
+                    break;
+                case 'clear':
+                    syncClearInfo(data.monsterId);
+                    break;
+                default:
+                    console.error('Nieznany typ wiadomości:', data.type);
+            }
+        } catch (error) {
+            console.error('Błąd podczas parsowania wiadomości:', error);
+        }
+    };
+
+    function sendToServer(type, monsterId, duration = null) {
+        const message = JSON.stringify({ type, monsterId, duration });
+        socket.send(message);
+    }
+
+    function startTimer(monsterId, duration) {
+        sendToServer('start', monsterId, duration);
+    }
+
+    function resetTimer(monsterId, duration) {
+        sendToServer('reset', monsterId);
+    }
+
+    function clearInfo(monsterId) {
+        sendToServer('clear', monsterId);
+    }
+
+    function syncStartTimer(monsterId, duration) {
+        const timerDisplay = document.getElementById('timer-' + monsterId);
+        const startButton = document.getElementById('start-' + monsterId);
+
+        startButton.disabled = true;
+
+        let timer = duration, minutes, seconds;
+        intervals[monsterId] = setInterval(function () {
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            timerDisplay.textContent = minutes + ":" + seconds;
+
+            if (timer < 300) { 
+                timerDisplay.classList.add('timer-warning');
+            } else {
+                timerDisplay.classList.remove('timer-warning');
+            }
+
+            if (--timer < 0) {
+                clearInterval(intervals[monsterId]);
+                timerDisplay.textContent = "Timer zakończony!";
+                startButton.disabled = false;
+                timerDisplay.classList.remove('timer-warning');
+            }
+        }, 1000);
+    }
+
+    function syncResetTimer(monsterId) {
+        clearInterval(intervals[monsterId]);
+        const timerDisplay = document.getElementById('timer-' + monsterId);
+        const startButton = document.getElementById('start-' + monsterId);
+        timerDisplay.textContent = "";
+        startButton.disabled = false;
+        timerDisplay.classList.remove('timer-warning');
+    }
+
+    function syncClearInfo(monsterId) {
+        const timerInfo = document.getElementById('info-' + monsterId);
+        timerInfo.textContent = "";
+    }
+</script>
+</html>

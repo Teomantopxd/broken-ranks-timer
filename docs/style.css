@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.monster, .monsterArea {
+    background: #1e1e1e;
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.monster img, .monsterArea img {
+    max-width: 70px;
+    height: auto;
+}
+
+button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #555;
+}
+
+button:disabled {
+    background: #555;
+    cursor: not-allowed;
+}
+
+span {
+    display: inline-block;
+    width: 100px; /* Set a fixed width */
+    text-align: center; /* Center the text */
+    font-size: 1.2em;
+}
+
+.timer-class {
+    font-size: 1.2em;
+}
+
+.timer-warning {
+    color: red;
+    font-size: 2em;
+}
