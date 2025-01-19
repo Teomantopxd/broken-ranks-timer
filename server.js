@@ -95,13 +95,25 @@ server.on('request', (req, res) => {
             body += chunk.toString();
         });
         req.on('end', () => {
-            const data = JSON.parse(body);
-            startTimer(data.monsterId, data.duration);
-            res.writeHead(200, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ status: 'Timer started' }));
+            // Parsujemy dane z żądania
+            try {
+                const data = JSON.parse(body);
+                console.log('Otrzymano dane:', data);
+
+                // Odpowiadamy na żądanie
+                res.writeHead(200, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ status: 'Success', message: 'Data received', received: data }));
+            } catch (error) {
+                console.error('Błąd parsowania danych:', error);
+
+                // Odpowiedź z błędem
+                res.writeHead(400, { 'Content-Type': 'application/json' });
+                res.end(JSON.stringify({ status: 'Error', message: 'Invalid JSON' }));
+            }
         });
     } else {
-        res.writeHead(404);
-        res.end();
+        // Odpowiedź na nieprawidłowy URL
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('Not Found');
     }
 });
