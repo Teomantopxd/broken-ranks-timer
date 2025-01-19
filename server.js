@@ -87,3 +87,21 @@ const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
     console.log(`Serwer działa na porcie ${PORT}`);
 });
+
+server.on('request', (req, res) => {
+    if (req.method === 'POST' && req.url === '/api/start-timer') {
+        let body = '';
+        req.on('data', chunk => {
+            body += chunk.toString();
+        });
+        req.on('end', () => {
+            const data = JSON.parse(body);
+            startTimer(data.monsterId, data.duration);
+            res.writeHead(200, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ status: 'Timer started' }));
+        });
+    } else {
+        res.writeHead(404);
+        res.end();
+    }
+});
