@@ -2,7 +2,16 @@ const WebSocket = require('ws');
 const http = require('http');
 
 // Tworzenie serwera HTTP
-const server = http.createServer();
+const server = http.createServer((req, res) => {
+    if (req.method === 'GET' && req.url === '/ping') {
+        res.writeHead(200, { 'Content-Type': 'text/plain' });
+        res.end('pong');
+    } else {
+        res.writeHead(404, { 'Content-Type': 'text/plain' });
+        res.end('Not Found');
+    }
+});
+
 const wss = new WebSocket.Server({ server });
 
 let clients = [];
@@ -86,34 +95,4 @@ wss.on('connection', (ws) => {
 const PORT = process.env.PORT || 3000;
 server.listen(PORT, () => {
     console.log(`Serwer działa na porcie ${PORT}`);
-});
-
-server.on('request', (req, res) => {
-    if (req.method === 'POST' && req.url === '/api/start-timer') {
-        let body = '';
-        req.on('data', chunk => {
-            body += chunk.toString();
-        });
-        req.on('end', () => {
-            // Parsujemy dane z żądania
-            try {
-                const data = JSON.parse(body);
-                console.log('Otrzymano dane:', data);
-
-                // Odpowiadamy na żądanie
-                res.writeHead(200, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ status: 'Success', message: 'Data received', received: data }));
-            } catch (error) {
-                console.error('Błąd parsowania danych:', error);
-
-                // Odpowiedź z błędem
-                res.writeHead(400, { 'Content-Type': 'application/json' });
-                res.end(JSON.stringify({ status: 'Error', message: 'Invalid JSON' }));
-            }
-        });
-    } else {
-        // Odpowiedź na nieprawidłowy URL
-        res.writeHead(404, { 'Content-Type': 'text/plain' });
-        res.end('Not Found');
-    }
 });
