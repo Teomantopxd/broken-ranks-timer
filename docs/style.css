@@ -12,18 +12,46 @@ body {
     overflow: hidden;
 }
 
+.header-container {
+    background: #1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 1440px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    text-shadow: 2px 2px 4px #000000;
+    transition: height 0.3s ease, padding 0.3s ease;
+}
+
+.header-container.shrink {
+    box-shadow: 0px 0px 10px #000000;
+    height: 60px;
+    padding: 10px;
+}
+
+.spacer {
+    height: 135px;
+}
+
+
 .monster, .monsterArea {
     background: #1e1e1e;
     margin: 20px 0;
     padding: 20px;
-    border: 1px solid #333;
-    border-radius: 5px;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
-.monster img, .monsterArea img {
+.monster img, .monsterArea img, .header-container img {
     max-width: 70px;
     height: auto;
 }
@@ -48,8 +76,8 @@ button:disabled {
 
 span {
     display: inline-block;
-    width: 100px; /* Set a fixed width */
-    text-align: center; /* Center the text */
+    width: 100px;
+    text-align: center;
     font-size: 1.2em;
 }
 
@@ -60,4 +88,19 @@ span {
 .timer-warning {
     color: red;
     font-size: 2em;
+}
+
+#monster-localization {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 150px;
+    transition: max-width 0.3s ease, white-space 0.3s ease;
+}
+
+.monster:hover #monster-localization, 
+.monsterArea:hover #monster-localization {
+    white-space: normal;
+    overflow: visible;
+    max-width: none;
 }
