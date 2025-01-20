@@ -3,27 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Monster Timer</title>
+    <title>Broken Ranks Champion Timer</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to the CSS file -->
 </head>
 <body>
     <div class="container">
-        <div class="monsterArea" id="area0">
-            <a href="placeholder" target="_blank">
+        <div class="header-container" id="area0">
+            <a target="_blank">
                 <img src="brokenRanks.png" alt="Monster Image">
             </a>
-            <span id="monster-name">Nazwa</span>
-            <span id="monster-localization">Lokalizacja</span>
-            <span id="monster-respawn">Respawn</span>
-            <span id="monster-dissapear">Znika po</span>
-            <button id="start-monster0" disabled="true">Start Timer</button>
-            <span id="timer-monster0">Pozostały czas (minimum)</span>
-            <span id="info-monster0">Timer skończył się o </span>
-            <button disabled="true">Clear Info</button>
-            <button id="reset-monster0" disabled="true">Reset Timer</button>
+            <span id="monster-name"><b>Nazwa</b></span>
+            <span id="monster-name"><b>Lokalizacja</b></span>
+            <span id="monster-name"><b>Respawn</b></span>
+            <span id="monster-name"><b>Znika po</b></span>
+            <span></span>
+            <span id="monster-name"><b>Pozostały czas (minimum)</b></span>
+            <span id="monster-name"><b>Timer skończył się o</b> </span>
+            <span></span>
+            <span></span>
         </div>
         <br>
+        <div class="spacer"></div>
         <!-- Jaskinia południowa -->
+        <h2>Jaskinia Południowa</h2>
         <div class="monster" id="monster4">
             <a href="https://wikibr.pl/index.php/Kosior" target="_blank">
                 <img src="monsterImg/70px-Kosior.png" alt="Kosior">
@@ -55,6 +57,7 @@
         <!-- Jaskinia południowa -->
         <br>
         <!-- Wymarła osada -->
+        <h2>Wymarła Osada</h2>
         <div class="monster" id="monster1">
             <a href="https://wikibr.pl/index.php/Treven" target="_blank">
                 <img src="monsterImg/70px-Treven.png" alt="Treven">
@@ -100,6 +103,7 @@
         <!-- Wymarła osada -->
         <br>
         <!-- Podzamcze -->
+         <h2>Podzamcze</h2>
         <div class="monster" id="monster6">
             <a href="https://wikibr.pl/index.php/Ogruch" target="_blank">
                 <img src="monsterImg/70px-Ogruch.png" alt="Ogruch">
@@ -119,7 +123,7 @@
                 <img src="monsterImg/70px-Popiel.png" alt="Popiel">
             </a>
             <span id="monster-name">Popiel Lv.28</span>
-            <span id="monster-localization">Podzamcze, Zamek_Gastelhof</span>
+            <span id="monster-localization">Podzamcze Zamek Gastelhof</span>
             <span class="timer-class" id="monster-respawn">30min - 40min</span>
             <span id="monster-dissapear">8-10min</span>
             <button id="start-monster7" onclick="startTimer('monster7', 1800)">Start Timer</button>
@@ -133,7 +137,7 @@
                 <img src="monsterImg/70px-Harlair.png" alt="Harlair">
             </a>
             <span id="monster-name">Harlair Lv.28</span>
-            <span id="monster-localization">Podzamcze, Jaskinie_pod_Granicą</span>
+            <span id="monster-localization">Podzamcze, Jaskinie pod Granicą</span>
             <span class="timer-class" id="monster-respawn">1h - 1h15min</span>
             <span id="monster-dissapear">12-15min</span>
             <button id="start-monster8" onclick="startTimer('monster8', 3600)">Start Timer</button>
@@ -147,7 +151,7 @@
                 <img src="monsterImg/70px-Orthal.png" alt="Orthal">
             </a>
             <span id="monster-name">Orthal Lv.28</span>
-            <span id="monster-localization">Podzamcze, Jaskinie_pod_Granicą</span>
+            <span id="monster-localization">Podzamcze, Jaskinie pod Granicą</span>
             <span class="timer-class" id="monster-respawn">40min - 1h</span>
             <span id="monster-dissapear">8-10min</span>
             <button id="start-monster9" onclick="startTimer('monster9', 2400)">Start Timer</button>
@@ -173,12 +177,13 @@
         <!-- Podzamcze -->
         <br>
         <!-- Jaskinie -->
+         <h2>Jaskinie</h2>
         <div class="monster" id="monster11">
             <a href="https://wikibr.pl/index.php/Acerodon" target="_blank">
                 <img src="monsterImg/70px-Acerodon.png" alt="Acerodon">
             </a>
             <span id="monster-name">Acerodon Lv.28</span>
-            <span id="monster-localization">Jaskinie_pod_Mokradłami, Jaskinie_pod_Wieżami, Zapomniany_Korytarz, Jaszczurzy_Cmentarz</span>
+            <span id="monster-localization">Jaskinie pod Mokradłami, Jaskinie pod Wieżami, Zapomniany Korytarz, Jaszczurzy Cmentarz</span>
             <span class="timer-class" id="monster-respawn">1h - 1h10min</span>
             <span id="monster-dissapear">10-15min</span>
             <button id="start-monster11" onclick="startTimer('monster11',3600)">Start Timer</button>
@@ -204,6 +209,7 @@
         <!-- Jaskinie -->
         <br>
         <!-- Wilcza jama -->
+         <h2>Wilcza Jama</h2>
         <div class="monster" id="monster13">
             <a href="https://wikibr.pl/index.php/Wilczurr" target="_blank">
                 <img src="monsterImg/70px-Wilczur.png" alt="Wilczur">
@@ -221,6 +227,7 @@
         <!-- Wilcza jama -->
         <br>
         <!--Wybrzeże-->
+        <h2>Wybrzeże</h2>
         <div class="monster" id="monster14">
             <a href="https://wikibr.pl/index.php/Przybysz" target="_blank">
                 <img src="monsterImg/70px-Przybysz.png" alt="Przybysz">
@@ -240,7 +247,7 @@
                 <img src="monsterImg/70px-Zębacz.png" alt="Zębacz">
             </a>
             <span id="monster-name">Zębacz Lv.34</span>
-            <span id="monster-localization">Wybrzeże, Statek, Jaskinie_pod_Wieżami, Jaskinie_pod_Mokradłami</span>
+            <span id="monster-localization">Wybrzeże, Statek, Jaskinie pod Wieżami, Jaskinie pod Mokradłami</span>
             <span class="timer-class" id="monster-respawn">40min - 48min</span>
             <span id="monster-dissapear">10-11min</span>
             <button id="start-monster15" onclick="startTimer('monster15',2400)">Start Timer</button>
@@ -268,7 +275,7 @@
                 <img src="monsterImg/70px-Tilsai_wędrowny.png" alt="Tilsai Wędrowny">
             </a>
             <span id="monster-name">Tilsai Wędrowny</span>
-            <span id="monster-localization">Wybrzeże, Statek, Jaskinie_pod_Wieżami, Jaskinie_pod_Mokradłami</span>
+            <span id="monster-localization">Wybrzeże, Statek, Jaskinie pod Wieżami, Jaskinie pod Mokradłami</span>
             <span class="timer-class" id="monster-respawn">1h - 1h10min</span>
             <span id="monster-dissapear">15-17min</span>
             <button id="start-monster17" onclick="startTimer('monster17',3600)">Start Timer</button>
@@ -280,6 +287,7 @@
         <!--Wybrzeże-->
         <br>
         <!--Las Koldów-->
+        <h2>Las Koldów</h2>
         <div class="monster" id="monster18">
             <a href="https://wikibr.pl/index.php/Psychopata" target="_blank">
                 <img src="monsterImg/70px-Psychopata.png" alt="Psychopata">
@@ -313,7 +321,7 @@
                 <img src="monsterImg/70px-Karol_kold.png" alt="Karol Kold">
             </a>
             <span id="monster-name">Karol Kold Lv.48</span>
-            <span id="monster-localization">Las_Koldów, Niedźwiedzia_Jaskinia</span>
+            <span id="monster-localization">Las Koldów, Niedźwiedzia Jaskinia</span>
             <span class="timer-class" id="monster-respawn">45min - 57min</span>
             <span id="monster-dissapear">10-12min</span>
             <button id="start-monster20" onclick="startTimer('monster20',2700)">Start Timer</button>
@@ -327,7 +335,7 @@
                 <img src="monsterImg/70px-Wściekły_grizzly.png" alt="70px-Wściekły Grizzly">
             </a>
             <span id="monster-name">Wściekły Grizzly Lv.55</span>
-            <span id="monster-localization">Las_Koldów, Niedźwiedzia_Jaskinia</span>
+            <span id="monster-localization">Las Koldów, Niedźwiedzia Jaskinia</span>
             <span class="timer-class" id="monster-respawn">35min - 55min</span>
             <span id="monster-dissapear">8-10min</span>
             <button id="start-monster21" onclick="startTimer('monster21', 2100)">StartTimer</button>
@@ -353,6 +361,7 @@
         <!--Las Koldów-->
         <br>
         <!--Las Orków-->
+        <h2>Las Orków</h2>
         <div class="monster" id="monster23">
             <a href="https://wikibr.pl/index.php/Telek" target="_blank">
                 <img src="monsterImg/70px-Telek.png" alt="Telek">
@@ -386,7 +395,7 @@
                 <img src="monsterImg/70px-Zaimm.png" alt="Zaimm">
             </a>
             <span id="monster-name">Zaimm</span>
-            <span id="monster-localization">Las_Orków, Namiot_Wodza_Orków</span>
+            <span id="monster-localization">Las Orków, Namiot Wodza Orków</span>
             <span class="timer-class" id="monster-respawn">20min - 24min</span>
             <span id="monster-dissapear">10-13min</span>
             <button id="start-monster25" onclick="startTimer('monster25', 1200)">Start Timer</button>
@@ -400,6 +409,19 @@
     </div>
 </body>
 <script>
+    //Animacja zmniejszania header-container przy scrollowaniu w dol
+    document.addEventListener('DOMContentLoaded', function () {
+                const header = document.querySelector('.header-container');
+
+                window.addEventListener('scroll', function () {
+                    if (window.scrollY > 50) { //Zmniejsz po 50px
+                        header.classList.add('shrink');
+                    } else { //Usun opcje shrink
+                        header.classList.remove('shrink');
+                    }
+                });
+            });
+
     const socket = new WebSocket('wss://brokenranksbackend.onrender.com');
 
     let intervals = {};
