@@ -21,18 +21,18 @@ body {
     justify-content: space-between;
     position: fixed;
     top: 0;
-    width: 1440px;
+    width: 78%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
     text-shadow: 2px 2px 4px #000000;
-    transition: height 0.3s ease, padding 0.3s ease;
+    transition: height 0.3s ease, padding 0.3s ease, box-shadow 0.5s ease;
 }
 
 .header-container.shrink {
     box-shadow: 0px 0px 10px #000000;
     height: 60px;
-    padding: 10px;
+    padding: 20px;
 }
 
 .spacer {
@@ -91,16 +91,13 @@ span {
 }
 
 #monster-localization {
-    overflow: hidden;
-    white-space: nowrap;
     text-overflow: ellipsis;
-    max-width: 150px;
+    width: 300px;
     transition: max-width 0.3s ease, white-space 0.3s ease;
 }
 
-.monster:hover #monster-localization, 
-.monsterArea:hover #monster-localization {
-    white-space: normal;
-    overflow: visible;
-    max-width: none;
-}
+li {
+    list-style-type: none; /* Remove bullets */
+    padding: 0; /* Remove padding */
+    margin: 3px; /* Remove margins */
+  }
