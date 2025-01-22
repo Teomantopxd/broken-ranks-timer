@@ -509,7 +509,7 @@
                 timerDisplay.classList.remove('timer-warning');
             }
 
-            if (--timer < 0) {
+            if (--timer < 0 && timer > -5) {
                 clearInterval(intervals[monsterId]);
                 var completionTime = new Date().toLocaleTimeString();
                 timerDisplay.textContent = initialMessage;
@@ -517,7 +517,12 @@
                 startButton.disabled = false;
                 timerDisplay.classList.remove('timer-warning');
                 updateInfo(monsterId, "Completed at " + completionTime);
-            }
+            } else if (timer <= -5) {
+				clearInterval(intervals[monsterId]);
+				timerDisplay.textContent = initialMessage;
+                startButton.disabled = false;
+                timerDisplay.classList.remove('timer-warning');
+			}
         }, 1000);
     }
 
