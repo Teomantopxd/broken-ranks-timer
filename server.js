@@ -30,7 +30,7 @@ function syncTimersToClients(client) {
         currentTimers[monsterId] = timers[monsterId] - elapsed;
 		
 		if(currentTimers[monsterId] <= 0) {
-			const endTime = new Date(timerStartTimes[monsterId] + timers[monsterId] * 1000).toLocaleTimeString('pl-PL', { hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+			const endTime = new Date(timerStartTimes[monsterId] + timers[monsterId] * 1000).toLocaleTimeString('pl-PL', { hour: '2-digit', minute: '2-digit', hourCycle: 'h23', timeZone: 'Europe/Warsaw' });
 			timerInfo[monsterId] = 'Completed at ' + endTime;
 		}
     }

@@ -36,11 +36,11 @@
             </span>
             <span class="timer-class" id="monster-respawn">25min - 30min</span>
             <span id="monster-dissapear">8min</span>
-            <button id="start-monster4" onclick="startTimer('monster4', 1500)">Start Timer</button>
+            <button id="start-monster4" onclick="startTimer('monster4', 12)">Start Timer</button>
             <span id="timer-monster4"></span>
             <span id="info-monster4"></span>
             <button onclick="clearInfo('monster4')">Clear Info</button>
-            <button id="reset-monster4" onclick="resetTimer('monster4', 1500)">Reset Timer</button>
+            <button id="reset-monster4" onclick="resetTimer('monster4', 12)">Reset Timer</button>
         </div>
         <div class="monster" id="monster5">
             <a href="https://wikibr.pl/index.php/Kruczy" target="_blank">
@@ -490,6 +490,7 @@
             });
 
     const socket = new WebSocket('wss://brokenranksbackend.onrender.com');
+    //const socket = new WebSocket('ws://localhost:3000');
 
     let intervals = {};
 
@@ -578,7 +579,7 @@
 
             if (--timer < 0 && timer > -5) {
                 clearInterval(intervals[monsterId]);
-                var completionTime = new Date().toLocaleTimeString();
+                var completionTime = new Date().toLocaleTimeString('pl-PL', { hour: '2-digit', minute: '2-digit', hourCycle: 'h23', timeZone: 'Europe/Warsaw' });
                 timerDisplay.textContent = initialMessage;
                 timerInfo.textContent = "Completed at " + completionTime;
                 startButton.disabled = false;
