@@ -471,6 +471,22 @@
             <button onclick="clearInfo('monster25')">Clear Info</button>
             <button id="reset-monster25" onclick="resetTimer('monster25', 1200)">Reset Timer</button>
         </div>
+        <div class="monster" id="monster31">
+            <a href="https://wikibr.pl/index.php/Yoko" target="_blank">
+                <img src="monsterImg/70px-Yoko.png" alt="Yoko">
+            </a>
+            <span id="monster-name">Yoko Lv.75</span>
+            <span id="monster-localization">
+                <li>Chram</li>
+            </span>
+            <span class="timer-class" id="monster-respawn">15min - 19min</span>
+            <span id="monster-dissapear">15-19min</span>
+            <button id="start-monster31" onclick="startTimer('monster31', 900)">Start Timer</button>
+            <span id="timer-monster31"></span>
+            <span id="info-monster31"></span>
+            <button onclick="clearInfo('monster31')">Clear Info</button>
+            <button id="reset-monster31" onclick="resetTimer('monster31', 900)">Reset Timer</button>
+        </div>
         <!--Las Orków-->
         <br>
         <!--Wąwóz Dmother-->
@@ -564,7 +580,7 @@
             <button id="reset-monster30" onclick="resetTimer('monster30', 2700)">Reset Timer</button>
         </div>
         <!--Wąwóz Dmother-->
-
+        <!-- Następny mobek id 32 -->
     </div>
 </body>
 <script>
@@ -582,7 +598,7 @@
             });
 
     const socket = new WebSocket('wss://brokenranksbackend.onrender.com');
-    //const socket = new WebSocket('ws://localhost:3000');
+    // const socket = new WebSocket('ws://localhost:3000');
 
     let intervals = {};
 
